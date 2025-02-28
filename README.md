@@ -29,18 +29,14 @@ My personal go-to boilerplate for most frontend projects using the React Library
 		<td>for client-side routing.</td>
 	</tr>
 		<tr>
-		<td>React Testing Library</td>
+		<td>Vitest + React Testing Library</td>
 		<td>for testing UI components</td>
 	</tr>
 	</tr>
 		<tr>
-		<td>i118</td>
+		<td>i18n</td>
 		<td>for internationalization</td>
 	</tr>
-	</tr>
-		<tr>
-		<td>Redux</td>
-		<td>for handling state management</td>
 	</tr>
 	</tr>
 		<tr>
@@ -57,6 +53,10 @@ My personal go-to boilerplate for most frontend projects using the React Library
 		<td>Framer Motion</td>
 		<td>for animating</td>
 	</tr>
+	<tr>
+		<td>Sanity</td>
+		<td>for content management </td>
+	</tr>
 </table>
 
 ## How to run the project:
@@ -67,10 +67,16 @@ My personal go-to boilerplate for most frontend projects using the React Library
 npm install
 ```
 
-**Run the dev server**
+**Run the dev server:**
 
 ```bash
 npm run dev
+```
+
+**Run test:**
+
+```bash
+npm run test
 ```
 
 ### Status
