@@ -1,21 +1,21 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
-import App from "./App";
+import AboutPage from ".";
 
-describe("App", () => {
-  it("renders the App component", () => {
+describe("About Page", () => {
+  it("should render the about page", () => {
     // arrange
     render(
       <MemoryRouter>
-        <App />
+        <AboutPage />
       </MemoryRouter>
     );
 
     // act
-    let text = screen.getByText("⚛️ React Boilerplate");
+    let heading = screen.getByRole("heading");
 
     // assert
-    expect(text).toBeInTheDocument();
+    expect(heading).toHaveTextContent(/about this project/i);
   });
 });
