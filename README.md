@@ -29,8 +29,8 @@ My personal go-to boilerplate for most frontend projects using the React Library
 		<td>for client-side routing.</td>
 	</tr>
 		<tr>
-		<td>Vitest + React Testing Library</td>
-		<td>for testing UI components</td>
+		<td>Vitest + React Testing Library + MSW</td>
+		<td>for testing UI components and mocking Rest APIs</td>
 	</tr>
 	</tr>
 		<tr>
