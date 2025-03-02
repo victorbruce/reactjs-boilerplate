@@ -7,6 +7,16 @@ import App from "./App.tsx";
 import AboutPage from "./pages/About/index.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 
+async function enableMocking() {
+  if (process.env.NODE_ENV !== "development") {
+    return;
+  }
+
+  const { worker } = await import("./mocks/browser.ts");
+
+  return worker.start();
+}
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,8 +29,10 @@ const router = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-);
+enableMocking().then(() => {
+  createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  );
+});
