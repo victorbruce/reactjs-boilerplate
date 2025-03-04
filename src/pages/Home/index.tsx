@@ -1,7 +1,22 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
 const HomePage = () => {
+  const [users, setUsers] = useState<User[]>([]);
+
+  useEffect(() => {
+    fetch("/api/users")
+      .then((response) => response.json())
+      .then((data) => setUsers(data));
+  }, []);
+
   return (
     <div className="h-screen w-full flex flex-col justify-center items-center">
       <motion.h1
@@ -25,6 +40,16 @@ const HomePage = () => {
       >
         Learn more
       </Link>
+      <div className="mt-8">
+        <h3 className="mb-4">Mock Service Worker Example:</h3>
+        <ul className="flex flex-col gap-2">
+          {users.map((user) => (
+            <li key={user.id}>
+              {user.name} | {user.email}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
