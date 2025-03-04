@@ -14,7 +14,10 @@ const HomePage = () => {
   useEffect(() => {
     fetch("/api/users")
       .then((response) => response.json())
-      .then((data) => setUsers(data));
+      .then((data) => setUsers(data))
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   return (
