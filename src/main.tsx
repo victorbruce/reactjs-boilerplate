@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import App from "./App.tsx";
 import AboutPage from "./pages/About/index.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
+import SanityStudio from "./components/SanityStudio.tsx";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/studio",
+    element: <SanityStudio />
   },
   {
     path: "/about",
